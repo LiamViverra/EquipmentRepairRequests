@@ -93,5 +93,25 @@ namespace EquipmentRepairRequests
             dataBase.CloseConnectrion();
             return false;
         }
+
+        public bool DelAccountDataBase(string login)
+        {
+            try
+            {
+                string query = "DELETE FROM dbo.ListOfUsers WHERE Login = @Log";
+
+                dataBase.OpenConnectrion();
+
+                SqlCommand command = new SqlCommand(query, dataBase.getConnection());
+                command.Parameters.AddWithValue("@Log", login);
+                command.ExecuteNonQuery();
+
+                dataBase.CloseConnectrion();
+                return true;
+            } catch(Exception exp)
+            {
+                return false;
+            }
+        }
     }
 }

@@ -15,15 +15,23 @@ namespace EquipmentRepairRequests.Tests
             dataBase.OpenConnectrion();
             Assert.IsNotNull(dataBase.getConnection());
         }
+    }
 
+    [TestClass]
+    class Test2
+    {
         [TestMethod]
         public void TestRegistration()
         {
             RegistrationForm registration = new RegistrationForm();
-            Assert.IsTrue(registration.AddDatabase("TEST2", "0000"));
-            Assert.IsTrue(registration.EntranceAccount("TEST2", "0000"));
+            Assert.IsTrue(registration.AddDatabase("TEST3", "0000"));
+            Assert.IsTrue(registration.EntranceAccount("TEST3", "0000"));
         }
+    }
 
+    [TestClass]
+    class Test3
+    {
         [TestMethod]
         public void TestApplication()
         {
@@ -48,6 +56,16 @@ namespace EquipmentRepairRequests.Tests
 
             reader.Close();
             dataBase.CloseConnectrion();
+        }
+    }
+
+    [TestClass]
+    class Test4
+    {
+        public void TestDelAccount()
+        {
+            RegistrationForm registration = new RegistrationForm();
+            Assert.IsTrue(registration.DelAccountDataBase("TEST3"));
         }
     }
 }
