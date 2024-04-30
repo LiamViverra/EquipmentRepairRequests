@@ -29,10 +29,10 @@ classDiagram
         +TestDelAccount(): void
     }
 
-    Test1 --> DataBaseConnect
-    Test2 --> RegistrationForm
-    Test3 --> ApplicationCreateForm
-    Test4 --> RegistrationForm
-    RegistrationForm --> DataBaseConnect
-    ApplicationCreateForm --> DataBaseConnect
+    Test1 --|> DataBaseConnect
+    Test2 --|> RegistrationForm
+    Test3 --|> ApplicationCreateForm
+    Test4 --|> RegistrationForm
+    RegistrationForm ..> DataBaseConnect
+    ApplicationCreateForm ..> DataBaseConnect
 ```
